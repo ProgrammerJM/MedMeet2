@@ -8,7 +8,6 @@ const path = require('path');
 const cors = require('cors')
 const PORT = process.env.PORT || 5050;
 
-<<<<<<< HEAD
 const whitelist = ['http://localhost:3000', 'http://localhost:5050', 'https://heroku123-app.herokuapp.com']
 const corsOptions = {
   origin: function (origin, callback) {
@@ -37,20 +36,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
-
-  
-
-
-
-=======
-if (process.env.NODE_ENV === "production"){
-  app.use(express.static('build'));
-  app.get('*',(req,res) => {
-    req.sendFile(path.resolve(__dirname,'build', 'index.html'))
-  })
-}
-
->>>>>>> 1ce9e8965c40ca627b8f2c8ae9b09c635a4eb39b
 const users = {};
 
 const socketToRoom = {};
